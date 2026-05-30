@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Suculenta Echeveria">
+  <rect width="400" height="300" fill="#f0f5f0"/>
+  <circle cx="200" cy="150" r="100" fill="#e2efe2"/>
+  <g fill="#7cc47a" stroke="#4c8f3f" stroke-width="2">
+    <ellipse cx="200" cy="200" rx="70" ry="34"/>
+    <ellipse cx="150" cy="180" rx="34" ry="20" transform="rotate(-25 150 180)"/>
+    <ellipse cx="250" cy="180" rx="34" ry="20" transform="rotate(25 250 180)"/>
+    <ellipse cx="200" cy="160" rx="44" ry="22"/>
+    <ellipse cx="175" cy="150" rx="22" ry="13" transform="rotate(-20 175 150)"/>
+    <ellipse cx="225" cy="150" rx="22" ry="13" transform="rotate(20 225 150)"/>
+    <ellipse cx="200" cy="142" rx="18" ry="11"/>
+  </g>
+  <g fill="#f2a8c4" opacity=".6">
+    <ellipse cx="200" cy="160" rx="10" ry="6"/>
+  </g>
+  <path d="M150 215h100l-12 48a10 10 0 0 1-10 8h-56a10 10 0 0 1-10-8z" fill="#d8d2c4"/>
+</svg>

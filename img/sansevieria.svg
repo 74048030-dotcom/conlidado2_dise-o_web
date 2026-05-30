@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Sansevieria Lengua de Suegra">
+  <rect width="400" height="300" fill="#eef6f1"/>
+  <circle cx="200" cy="140" r="110" fill="#e0f0e6"/>
+  <g fill="#2f7d4f" stroke="#1f5a38" stroke-width="2">
+    <path d="M200 250c-6-90-2-150 2-180 6 30 8 90 4 180z"/>
+    <path d="M200 250c-30-70-44-120-50-150 22 22 42 70 56 150z"/>
+    <path d="M200 250c30-70 44-120 50-150-22 22-42 70-56 150z"/>
+  </g>
+  <g fill="none" stroke="#d4c34a" stroke-width="3" opacity=".8">
+    <path d="M200 245c-4-80-2-135 2-165"/>
+    <path d="M188 240c-22-60-34-105-40-130"/>
+    <path d="M212 240c22-60 34-105 40-130"/>
+  </g>
+  <path d="M160 248h80l-12 40a8 8 0 0 1-8 6h-40a8 8 0 0 1-8-6z" fill="#c0743e"/>
+</svg>

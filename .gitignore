@@ -1,0 +1,13 @@
+# Secretos / credenciales — NUNCA subir
+token.txt
+*.token
+*.secret
+.env
+.env.*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor / herramientas
+.claude/

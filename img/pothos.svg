@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Pothos Dorado">
+  <rect width="400" height="300" fill="#f1f7ec"/>
+  <circle cx="200" cy="130" r="110" fill="#e6f2dc"/>
+  <g stroke="#4c8f3f" stroke-width="4" fill="none">
+    <path d="M200 250c-30-30-70-20-110-60"/>
+    <path d="M200 250c30-30 70-20 110-60"/>
+    <path d="M200 250c0-40 0-80 0-120"/>
+  </g>
+  <g fill="#6bbf59">
+    <path d="M95 190c-14 4-22 18-16 30 12 4 26-4 28-18z"/>
+    <path d="M305 190c14 4 22 18 16 30-12 4-26-4-28-18z"/>
+    <path d="M200 130c-15-3-28 6-28 20 12 8 28 2 32-12z"/>
+    <path d="M150 210c-13 5-19 18-12 29 12 3 25-6 25-20z"/>
+    <path d="M250 210c13 5 19 18 12 29-12 3-25-6-25-20z"/>
+  </g>
+  <g fill="#cfe87e" opacity=".7">
+    <path d="M95 190c-8 6-10 16-5 24 7-2 12-12 11-22z"/>
+    <path d="M200 130c-8 4-11 13-7 21 8-2 13-12 11-21z"/>
+  </g>
+  <path d="M165 248h70l-10 38a8 8 0 0 1-8 6h-34a8 8 0 0 1-8-6z" fill="#d8d2c4"/>
+</svg>

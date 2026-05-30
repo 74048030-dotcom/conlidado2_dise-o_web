@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Lavanda">
+  <rect width="400" height="300" fill="#f3f0f7"/>
+  <circle cx="200" cy="140" r="110" fill="#ebe3f3"/>
+  <g stroke="#6f9a4f" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M200 250c-2-50-6-90-30-150"/>
+    <path d="M200 250c2-50 6-90 30-150"/>
+    <path d="M200 250c0-55 0-100 0-160"/>
+  </g>
+  <g fill="#8e6fc4">
+    <g transform="rotate(-15 170 100)"><ellipse cx="170" cy="100" rx="9" ry="6"/><ellipse cx="170" cy="86" rx="8" ry="6"/><ellipse cx="170" cy="73" rx="7" ry="5"/></g>
+    <g><ellipse cx="200" cy="90" rx="9" ry="6"/><ellipse cx="200" cy="76" rx="8" ry="6"/><ellipse cx="200" cy="63" rx="7" ry="5"/></g>
+    <g transform="rotate(15 230 100)"><ellipse cx="230" cy="100" rx="9" ry="6"/><ellipse cx="230" cy="86" rx="8" ry="6"/><ellipse cx="230" cy="73" rx="7" ry="5"/></g>
+  </g>
+  <path d="M162 248h76l-11 40a8 8 0 0 1-8 6h-38a8 8 0 0 1-8-6z" fill="#c0743e"/>
+</svg>

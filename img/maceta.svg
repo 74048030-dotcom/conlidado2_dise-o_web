@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Maceta de cerámica">
+  <rect width="400" height="300" fill="#faf6f1"/>
+  <circle cx="200" cy="150" r="105" fill="#f0e7dd"/>
+  <path d="M130 120h140l-18 120a14 14 0 0 1-14 12h-76a14 14 0 0 1-14-12z" fill="#d98c5f"/>
+  <rect x="120" y="104" width="160" height="22" rx="8" fill="#c9763f"/>
+  <path d="M150 150h100" stroke="#b5663a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M156 180h88" stroke="#b5663a" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+</svg>

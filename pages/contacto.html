@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finaliza tu pedido en Raíz Verde con entrega a domicilio.">
+  <title>Contacto y pedido · Raíz Verde</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera__barra">
+      <a class="marca" href="../index.html">
+        <img class="marca__logo" src="../img/logo.svg" alt="Logo de Raíz Verde">
+        <span class="marca__nombre">Raíz<span>Verde</span></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a class="activo" href="contacto.html">Contacto</a></li>
+          <li>
+            <a class="carrito-icono" href="carrito.html" aria-label="Ver carrito">
+              <svg class="carrito-icono__svg" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+              </svg>
+              <span class="carrito-icono__badge oculto" id="contador-carrito">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="seccion contenedor">
+    <h1 class="seccion__titulo">Finaliza tu pedido</h1>
+    <p class="seccion__bajada">Completa tus datos y nos pondremos en contacto para coordinar la entrega</p>
+
+    <div class="form-card">
+      <div id="aviso"></div>
+
+      <!-- novalidate: desactivamos la validación nativa para validar con JS -->
+      <form id="form-checkout" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez">
+          <span class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="nombre@correo.com">
+          <span class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono (9 dígitos) *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="987654321">
+          <span class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="direccion">Dirección de entrega *</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Av. Siempre Viva 123, Lima">
+          <span class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha de entrega deseada *</label>
+          <input type="date" id="fecha" name="fecha">
+          <span class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="notas">Notas para el repartidor (opcional)</label>
+          <textarea id="notas" name="notas" placeholder="Referencias, horario preferido…"></textarea>
+          <span class="campo__error"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primario btn--bloque">Confirmar pedido</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <h4>🌿 Raíz Verde</h4>
+        <p>Vivero urbano dedicado a acercar la naturaleza a tu hogar.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Lima, Perú</li><li>hola@raizverde.pe</li><li>(01) 555-0123</li></ul>
+      </div>
+    </div>
+    <p class="pie__copy">© 2026 Raíz Verde · Proyecto académico · Diseño Web NRC 33061</p>
+  </footer>
+
+  <script src="../js/productos.js"></script>
+  <script src="../js/utiles.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="../js/contacto.js"></script>
+</body>
+</html>
