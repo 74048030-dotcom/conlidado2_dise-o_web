@@ -9,11 +9,15 @@
   <!-- Google Fonts (único CDN permitido por la consigna) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Bootstrap 5.3.8 (CDN) — DEBE ir ANTES de estilos.css para que nuestro CSS gane la cascada -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css"> <!-- el nuestro, DESPUÉS -->
 </head>
 <body>
 
-  <!-- ENCABEZADO + NAVEGACIÓN -->
+  <!-- ============================================================
+       S13 — ENCABEZADO ARTESANAL (jubilado en S14, conservado para comparar)
+       Menú con flex puro: sin colapso real ni accesibilidad por teclado.
   <header class="cabecera">
     <div class="cabecera__barra">
       <a class="marca" href="index.html">
@@ -38,6 +42,38 @@
       </nav>
     </div>
   </header>
+  ============================================================ -->
+
+  <!-- S14 — NAVBAR BOOTSTRAP: collapse real <992px + navegable por teclado -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand marca" href="index.html">
+        <img class="marca__logo" src="img/logo.svg" alt="Logo de Raíz Verde">
+        <span class="marca__nombre">Raíz<span>Verde</span></span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+          <li class="nav-item">
+            <a class="nav-link carrito-icono" href="pages/carrito.html" aria-label="Ver carrito">
+              <svg class="carrito-icono__svg" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+              </svg>
+              <span class="carrito-icono__badge oculto" id="contador-carrito">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <!-- BANNER PRINCIPAL con animación CSS -->
@@ -82,8 +118,8 @@
     <section class="seccion contenedor">
       <h2 class="seccion__titulo">Destacados de la semana</h2>
       <p class="seccion__bajada">Una selección de nuestras plantas más queridas</p>
-      <div class="grid-productos" id="destacados">
-        <!-- Las tarjetas se inyectan desde inicio.js -->
+      <div class="row g-4" id="destacados">
+        <!-- Las tarjetas se inyectan desde inicio.js (cada una dentro de su columna) -->
       </div>
       <p style="text-align:center; margin-top:2rem">
         <a class="btn btn--borde" href="pages/catalogo.html">Ver todo el catálogo →</a>
@@ -119,6 +155,8 @@
   </footer>
 
   <!-- Scripts (orden: datos → utilidades → carrito → lógica de página) -->
+  <!-- Bootstrap bundle (incluye Popper): necesario para el collapse de la navbar -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/productos.js"></script>
   <script src="js/utiles.js"></script>
   <script src="js/carrito.js"></script>

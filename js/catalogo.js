@@ -40,14 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function pintar(lista) {
     conteo.textContent = `${lista.length} producto${lista.length === 1 ? "" : "s"}`;
     if (lista.length === 0) {
+      // col-12 para ocupar toda la fila del grid de Bootstrap.
       grid.innerHTML = `
-        <div class="sin-resultados">
-          <strong>Sin coincidencias</strong>
-          Prueba con otra palabra o cambia la categoría.
+        <div class="col-12">
+          <div class="sin-resultados">
+            <strong>Sin coincidencias</strong>
+            Prueba con otra palabra o cambia la categoría.
+          </div>
         </div>`;
       return;
     }
-    grid.innerHTML = lista.map(crearTarjetaProducto).join("");
+    // Cada tarjeta dentro de su columna: 1 / 2 / 3 por fila según breakpoint.
+    grid.innerHTML = lista
+      .map(p => `<div class="col-12 col-md-6 col-lg-4">${crearTarjetaProducto(p)}</div>`)
+      .join("");
   }
 
   // --- EVENTOS ---

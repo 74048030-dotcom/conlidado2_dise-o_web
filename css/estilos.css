@@ -24,6 +24,14 @@
   --radio: 14px;
   --sombra: 0 1px 3px rgba(20, 50, 30, 0.08), 0 6px 18px rgba(20, 50, 30, 0.06);
   --ancho-max: 1140px;
+
+  /* --- S14 · Desafío 4: personalización de Bootstrap sin Sass ---
+     Sobrescribimos las variables del framework para que SUS componentes
+     (botones .btn-primary, foco, enlaces) usen el verde de Raíz Verde. */
+  --bs-primary: #2f7d4f;
+  --bs-primary-rgb: 47, 125, 79;
+  --bs-link-color: #2f7d4f;
+  --bs-link-hover-color: #1f5a38;
 }
 
 /* --- Reset básico --- */
@@ -47,6 +55,11 @@ a { color: inherit; text-decoration: none; }
 /* ============================================================
    CABECERA + NAVEGACIÓN (semántica: header > nav)
    ============================================================ */
+/* --- S14: MIGRADO A LA NAVBAR DE BOOTSTRAP ---------------------------------
+   El header artesanal (.cabecera + .menu) se reemplazó por .navbar de
+   Bootstrap, que ya aporta sticky, flex y collapse responsive. Se conserva
+   comentado para la comparación de la S14 (NO borrar).
+
 .cabecera {
   position: sticky;
   top: 0;
@@ -64,11 +77,6 @@ a { color: inherit; text-decoration: none; }
   max-width: var(--ancho-max);
   margin: 0 auto;
 }
-.marca { display: flex; align-items: center; gap: 0.6rem; }
-.marca__logo { width: 42px; height: 42px; }
-.marca__nombre { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.3rem; color: var(--color-primary); }
-.marca__nombre span { color: var(--color-secondary); }
-
 .menu { display: flex; align-items: center; gap: 0.4rem; list-style: none; }
 .menu a {
   padding: 0.45rem 0.8rem;
@@ -79,6 +87,32 @@ a { color: inherit; text-decoration: none; }
 }
 .menu a:hover { background: var(--color-fondo); color: var(--color-primary); }
 .menu a.activo { color: var(--color-primary); background: #e7f2ea; }
+--------------------------------------------------------------------------- */
+
+/* La marca (logo + nombre) SÍ se reutiliza dentro de .navbar-brand */
+.marca { display: flex; align-items: center; gap: 0.6rem; }
+.marca__logo { width: 42px; height: 42px; }
+.marca__nombre { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.3rem; color: var(--color-primary); }
+.marca__nombre span { color: var(--color-secondary); }
+
+/* --- S14: PUENTE BOOTSTRAP ↔ IDENTIDAD RAÍZ VERDE -------------------------
+   Re-vestimos los .nav-link de Bootstrap con el look del antiguo .menu para
+   no perder la identidad visual de la marca. */
+.navbar { padding-top: 0.6rem; padding-bottom: 0.6rem; box-shadow: 0 2px 8px rgba(20, 50, 30, 0.04); }
+.navbar .navbar-brand { padding: 0; }
+.navbar .nav-link {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+  transition: background 0.2s, color 0.2s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus { background: var(--color-fondo); color: var(--color-primary); }
+.navbar .nav-link.active { color: var(--color-primary); background: #e7f2ea; }
+/* El toggler (botón ☰) toma el verde de la marca */
+.navbar-toggler { border-color: var(--color-borde); }
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(47,125,79,0.2); }
 
 /* Ícono del carrito con contador (badge) */
 .carrito-icono { position: relative; display: inline-flex; align-items: center; padding: 0.45rem 0.7rem; border-radius: 8px; transition: background 0.2s; }
@@ -183,11 +217,15 @@ a { color: inherit; text-decoration: none; }
 /* ============================================================
    GRID DE PRODUCTOS + TARJETAS
    ============================================================ */
+/* --- S14: MIGRADO AL GRID DE BOOTSTRAP (row g-4 + col-*) -------------------
+   El grid propio con auto-fill se reemplazó por el sistema de 12 columnas.
+   Las tarjetas (.tarjeta) conservan su estilo; solo cambia el contenedor.
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.4rem;
 }
+--------------------------------------------------------------------------- */
 .tarjeta {
   background: var(--color-superficie);
   border: 1px solid var(--color-borde);
@@ -196,6 +234,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%; /* S14: igualar altura entre tarjetas de la misma fila del grid */
   transition: transform 0.18s, box-shadow 0.18s;
 }
 .tarjeta:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(20,50,30,0.14); }
@@ -320,6 +359,8 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
 }
 .campo { margin-bottom: 1.2rem; }
+/* S14: dentro del grid (row g-3) los gutters dan el espaciado; evitamos doble margen */
+form.row .campo { margin-bottom: 0; }
 .campo label { display: block; font-weight: 700; margin-bottom: 0.35rem; font-size: 0.92rem; }
 .campo input, .campo textarea, .campo select {
   width: 100%;
@@ -375,16 +416,18 @@ a { color: inherit; text-decoration: none; }
   .carrito-layout { grid-template-columns: 1fr; }
   .resumen { position: static; }
   .pie__contenido { grid-template-columns: 1fr; text-align: center; }
-  .menu a { padding: 0.4rem 0.55rem; font-size: 0.9rem; }
+  /* .menu a {...}  → S14: el collapse de la navbar gestiona el menú en móvil */
 }
 
 @media (max-width: 480px) {
+  /* S14: la navbar de Bootstrap ya colapsa <992px; estas reglas del menú
+     artesanal quedan migradas:
   .cabecera__barra { flex-wrap: wrap; }
-  .marca__nombre { font-size: 1.1rem; }
   .menu { gap: 0.1rem; }
-  .menu a { padding: 0.35rem 0.45rem; font-size: 0.82rem; }
+  .menu a { padding: 0.35rem 0.45rem; font-size: 0.82rem; } */
+  .marca__nombre { font-size: 1.1rem; }
   .banner__contenido { padding: 2.5rem 1.2rem; }
-  .grid-productos { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  /* .grid-productos →  S14: el grid de Bootstrap (col-*) controla las columnas */
   .tarjeta__acciones { flex-direction: column; }
   .linea-carrito { grid-template-columns: 60px 1fr; row-gap: 0.6rem; }
   .linea-carrito__img { width: 60px; }
